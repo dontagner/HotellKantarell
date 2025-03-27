@@ -45,20 +45,3 @@ a{
     background-color: #d9a343;
     font-weight: 800;
 }
-.secondimgbox {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: antiquewhite;
-}
-
-.secondimgbox img {
-    width: 650px;
-    height: 650px;
-    object-fit: cover; /* Ser till att bilden fyller sin box snyggt */
-    background-color: white; /* Extra säkerhet för vit bakgrund */
-    border-radius: 15%;
-    rotate: -3deg;
-}
