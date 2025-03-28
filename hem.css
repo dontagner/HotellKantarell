@@ -8,29 +8,40 @@
 body{
     overflow: hidden;
 }
-
-.topbar{
+.topbar {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #d09530;
     color: #fff;
+    padding: 10px 20px;
+    width: 100%;
 }
-.imgbox img{
+
+.imgbox {
+    display: flex;
+    align-items: center;
+}
+
+.imgbox img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
-.topbar h1{
-    display: flex;
-    align-items: center;
-    font-size: 3rem;
+
+.topbar h1 {
+    font-size: 2.5rem;
     color: #7d7232;
+    margin-left: 20px; /* Flyttar texten lite till vänster */
 }
-.navbar{
+
+.navbar {
     display: flex;
-    width: 40%;
     justify-content: space-around;
     align-items: center;
+    width: 40%;
 }
+
 .text{
     width: 100%;
     display: flex;
