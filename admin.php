@@ -57,11 +57,7 @@ while($rad=mysqli_fetch_assoc($result)){ ?>
     </p>
 <?php }
 ?>
-<form action="admin.php" method="POST">
-    <input type="text" name="namn" placeholder="För och efternamn">
-    <input type="text" name="rum" placeholder="Rum">
-    <input type="submit" name="submit" value="Skicka">
-</form>
+
 
 </body>
 </html>

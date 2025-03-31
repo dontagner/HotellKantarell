@@ -21,5 +21,14 @@
 </div>
 </div>
 
+<div class="boka">
+    <h1>Boka rum</h1>
+</div>
+
+<form action="admin.php" method="POST">
+    <input type="text" name="namn" placeholder="För och efternamn">
+    <input type="text" name="rum" placeholder="Rum">
+    <input type="submit" name="submit" value="Skicka">
+</form>
 </body>
 </html>
