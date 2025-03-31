@@ -17,6 +17,7 @@
             <a href="hem.html">Hem</a>
             <a href="om.html">Om</a>
             <a href="boka.php">Boka</a>
+            <a href="kontakt.php">Kontakta</a>
         </div>
     </div>
     </div>

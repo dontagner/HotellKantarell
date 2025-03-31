@@ -17,6 +17,7 @@
         <a id="1" href="hem.html">Hem</a>
         <a id="2" href="om.html">Om</a>
         <a id="3" href="kontakt.php">Kontakt</a>
+        <a href="login.php">Logga in</a>
     </div>
 </div>
 </div>
