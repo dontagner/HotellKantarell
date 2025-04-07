@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$level=intval($_SESSION['5ddf']);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,10 +19,13 @@
     <div class="text">
         <h1>Hotell Kantarell</h1>
         <div class="navbar">
-        <a href="boka.php">Boka</a>
+        <?php if($level>=1000){ ?><a href="boka.php">Boka</a><?php } ?>
+        <?php if($level>=1000){ ?><a href="admin.php">Admin</a><?php } ?>
         <a href="om.html">Om</a>
         <a href="kontakt.php">Kontakt</a>
-        <a href="login.php">Logga in</a>
+        <?php if($level<=10){ ?><a href="login.php">Logga in</a><?php } ?>
+        <?php if($level>=1000){ ?><a href="logout.php">Logga ut</a><?php } ?>
+        
     </div>
 </div>
 </div>

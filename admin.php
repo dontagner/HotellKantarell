@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
     </div>
     <div class="text">
     <div class="navbar">
-        <a href="hem.html">Hem</a>
+        <a href="hem.php">Hem</a>
         <a href="boka.php">Boka</a>
         <a href="kontakt.php">Kontakt</a>
     </div>

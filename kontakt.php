@@ -14,7 +14,7 @@
         <div class="text">
             <h1>Hotell Kantarell</h1>
             <div class="navbar">
-            <a href="hem.html">Hem</a>
+            <a href="hem.php">Hem</a>
             <a href="om.html">Om</a>
             <a href="boka.php">Boka</a>
             <a href="login.php">Logga in</a>
