@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$level=intval($_SESSION['5ddf']);
+if (isset($_SESSION['5ddf'])) {
+    $level = intval($_SESSION['5ddf']);
+}
+else {
+    $level = 10;
+}
 ?>
 <html lang="en">
 <head>
