@@ -22,15 +22,16 @@
     </div>
     </div>
 
-    <form action="kontakt.php" method="post">
-    <label for="username">Ditt namn</label><br>
-    <input type="text" name="username" required><br>
+    <form action="adminkontakt.php" method="post">
+  <label for="username">Ditt namn</label><br>
+  <input type="text" name="username" required><br>
 
-    <label for="password">Lösenord:</label><br>
-    <input type="password" name="password" required><br>
+  <label for="arende">Ärende</label><br>
+  <input type="text" name="arende" required><br>
 
-    <button type="submit" name="btnLogin">Logga in</button>
+  <button type="submit" name="btnLogin">Skicka</button>
 </form>
+
     
 </body>
 </html>

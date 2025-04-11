@@ -8,14 +8,14 @@ $conn=mysqli_connect($server,$username,$password, "hotellkantarell");
 
 if(isset($_POST["submit"])){
     $namn=$_POST["namn"];
-    $rum= $_POST["rum"];
-    $sql="INSERT INTO tbluser(namn, rum) VALUES ('$namn', '$rum')";
+    $arende= $_POST["arende"];
+    $sql="INSERT INTO kontakt(namn, arende) VALUES ('$namn', '$arende')";
     $reslut=mysqli_query($conn,$sql);
 }
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $sql="DELETE FROM tbluser WHERE id=$id";
+    $sql="DELETE FROM kontakt WHERE id=$id";
     $result=mysqli_query($conn,$sql);
 }
 
@@ -46,17 +46,51 @@ if(isset($_GET['id'])){
 
 
 <?php
-$sql="SELECT * FROM tbluser";
-$result=mysqli_query($conn,$sql);
-while($rad=mysqli_fetch_assoc($result)){ ?>
+// 1. Anslut till databasen
+$servername = "localhost";
+$username = "root"; // ändra vid behov
+$password = "";     // ändra vid behov
+$dbname = "hotellkantarell";
 
-    <p>
-        <b>Namn:</b>&nbsp;<?=$rad["namn"]?><br>
-        <b>Rums Nummer:</b>&nbsp;<?=$rad["rum"]?>
-        <a href="admin.php?id=<?=$rad['id']?>">Checka Ut</a>
-    </p>
-<?php }
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Kontrollera anslutning
+if ($conn->connect_error) {
+    die("Anslutning misslyckades: " . $conn->connect_error);
+}
+
+// 2. Ta emot data från formuläret
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $namn = $conn->real_escape_string($_POST['username']);
+    $arende = $conn->real_escape_string($_POST['arende']);
+
+    // 3. Spara i databasen
+    $sql = "INSERT INTO kontakt (namn, arende) VALUES ('$namn', '$arende')";
+    
+    if ($conn->query($sql) === TRUE) {
+    } else {
+        echo "Fel: " . $sql . "<br>" . $conn->error;
+    }
+}
+// Visa alla inskickade meddelanden
+echo "<h2>Inkomna meddelanden:</h2>";
+$result = $conn->query("SELECT * FROM kontakt");
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<div style='border:1px solid #ccc; padding:10px; margin-bottom:10px;'>
+                <p><strong>" . htmlspecialchars($row["namn"]) . "</strong>: " . htmlspecialchars($row["arende"]) . "</p>
+                <a href='adminkontakt.php?id=" . $row["id"] . "' style='color:red;'>Ta bort</a>
+              </div>";
+    }
+} else {
+    echo "<p>Inga meddelanden ännu.</p>";
+}
+
+
+$conn->close();
 ?>
+
 
 
 </body>
