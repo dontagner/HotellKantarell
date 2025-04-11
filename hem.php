@@ -26,6 +26,7 @@ else {
         <div class="navbar">
         <?php if($level>=1000){ ?><a href="boka.php">Boka</a><?php } ?>
         <?php if($level>=1000){ ?><a href="admin.php">Admin</a><?php } ?>
+        <?php if($level>=1000){ ?><a href="adminkontakt.php">Admin Kontakt</a><?php } ?>
         <a href="om.html">Om</a>
         <a href="kontakt.php">Kontakt</a>
         <?php if($level<=10){ ?><a href="login.php">Logga in</a><?php } ?>
