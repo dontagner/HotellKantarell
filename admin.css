@@ -7,6 +7,7 @@
 
 body{
     background-color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .topbar {
@@ -56,4 +57,48 @@ body{
     padding: 10px;
     background-color: #d9a343;
     font-weight: 800;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #7d5a24;
+}
+
+.gästlista {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff5e6;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gästlista thead {
+    background-color: #d9a343;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.gästlista th, .gästlista td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0c68c;
+}
+
+
+
+.checkaut {
+    background-color: #c44e4e;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.checkaut:hover {
+    background-color: #a83c3c;
 }

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px dotted red;
+    --outline: 1px dotted red;
 }
 
 body{
@@ -71,8 +71,47 @@ form{
     color:#7d7232;
     padding: 10px;
     border-radius: 20px;
-    background-color: #d9a343;
+    background-color: #d7d4cd;
     width: 15%;
     margin-left: 41%;
     margin-top: 3%;
+}
+.bokningsform {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #ebe4d2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.bokningsform input[type="text"],
+.bokningsform input[type="number"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.bokningsform label {
+    font-size: 1rem;
+    color: #3e2f1c;
+}
+
+.bokningsform input[type="submit"] {
+    background-color: #d09530;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bokningsform input[type="submit"]:hover {
+    background-color: #b97c20;
 }

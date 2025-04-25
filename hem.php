@@ -42,6 +42,9 @@ else {
             Ett sagolikt hotell mitt i skogen – perfekt för avkoppling, god mat och naturupplevelser.  
             Hos oss hittar du hemtrevlig stämning, varm service och oförglömliga minnen.  
             Vare sig du vill boka en helg för återhämtning eller fira något speciellt – du är alltid välkommen hem till oss.
+
+            Vi tar enbart emot bokningar på plats pågrund av en tidigare raid, där vi fick 10 tusen bokningar på en dag.
+            Vi ber om ursäkt för detta och hoppas att ni har förståelse för detta.
         </p>
     </div>
 

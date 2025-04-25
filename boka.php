@@ -32,14 +32,18 @@ if($level<1000){
 </div>
 </div>
 
-<div class="boka">
-    <h1>Boka rum</h1>
-</div>
 
-<form action="admin.php" method="POST">
-    <input type="text" name="namn" placeholder="För och efternamn">
-    <input type="text" name="rum" placeholder="Rum">
+<form action="admin.php" method="POST" class="bokningsform">
+    <input type="text" name="namn" placeholder="För- och efternamn" required>
+    <input type="text" name="rum" placeholder="Rum" required>
+    <input type="text" name="natter" placeholder="Antal nätter" required>
+    <label>
+    <input type="checkbox" name="frukost" value="1">
+    Jag vill ha frukost
+</label>
+
     <input type="submit" name="submit" value="Skicka">
+
 </form>
 </body>
 </html>

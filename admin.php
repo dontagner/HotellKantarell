@@ -7,11 +7,16 @@ $password="";
 $conn=mysqli_connect($server,$username,$password, "hotellkantarell");
 
 if(isset($_POST["submit"])){
-    $namn=$_POST["namn"];
-    $rum= $_POST["rum"];
-    $sql="INSERT INTO tbluser(namn, rum) VALUES ('$namn', '$rum')";
-    $reslut=mysqli_query($conn,$sql);
+    $namn = $_POST["namn"];
+    $rum = $_POST["rum"];
+    $natter = $_POST["natter"];
+    $frukost = isset($_POST["frukost"]) ? 1 : 0;
+
+    $sql = "INSERT INTO tbluser (namn, rum, natter, frukost) 
+            VALUES ('$namn', '$rum', '$natter', '$frukost')";
+    $reslut = mysqli_query($conn, $sql);
 }
+
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
@@ -46,15 +51,39 @@ if(isset($_GET['id'])){
 
 
 <?php
+
+
 $sql="SELECT * FROM tbluser";
 $result=mysqli_query($conn,$sql);
-while($rad=mysqli_fetch_assoc($result)){ ?>
+while($rad=mysqli_fetch_assoc($result)){ // Loop through each row in the result set
+    ?>
 
-    <p>
-        <b>Namn:</b>&nbsp;<?=$rad["namn"]?><br>
-        <b>Rums Nummer:</b>&nbsp;<?=$rad["rum"]?>
-        <a href="admin.php?id=<?=$rad['id']?>">Checka Ut</a>
-    </p>
+<table class="gästlista">
+    <thead>
+        <tr>
+            <th>Namn</th>
+            <th>Rum</th>
+            <th>Nätter</th>
+            <th>Frukost</th>
+            <th>Åtgärd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $sql="SELECT * FROM tbluser";
+        $result=mysqli_query($conn,$sql);
+        while($rad=mysqli_fetch_assoc($result)){ ?>
+            <tr>
+                <td><?= $rad["namn"] ?></td>
+                <td><?= $rad["rum"] ?></td>
+                <td><?= $rad["natter"] ?></td>
+                <td><?= ($rad["frukost"] == 1) ? "Ja" : "Nej" ?></td>
+                <td><a class="checkaut" href="admin.php?id=<?= $rad['id'] ?>">Checka ut</a></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
 <?php }
 ?>
 
