@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<?php 
-$server="localhost";
-$username="root";
-$password="";
-
-$conn=mysqli_connect($server,$username,$password, "hotellkantarell");
-
-if(isset($_POST["submit"])){
-    $namn=$_POST["namn"];
-    $arende= $_POST["arende"];
-    $sql="INSERT INTO kontakt(namn, arende) VALUES ('$namn', '$arende')";
-    $reslut=mysqli_query($conn,$sql);
+<?php
+session_start();
+if (!isset($_SESSION['5ddf']) || intval($_SESSION['5ddf']) < 1000) {
+    echo "Åtkomst nekad. Endast administratörer har behörighet.";
+    exit();
 }
 
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
-    $sql="DELETE FROM kontakt WHERE id=$id";
-    $result=mysqli_query($conn,$sql);
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['rensa'])) {
+    file_put_contents("klagomal.txt", ""); // tömmer filen
+    $meddelande = "Alla klagomål har raderats.";
 }
 
 ?>
@@ -45,53 +37,28 @@ if(isset($_GET['id'])){
 <h1>Kontakt</h1>
 
 
+<div class="admin-klagomal" style="padding: 40px;">
+    <h2>Inskickade klagomål</h2>
+
+    <?php if (isset($meddelande)) { echo "<p style='color: green;'>$meddelande</p>"; } ?>
+
+    <form method="post" onsubmit="return confirm('Är du säker på att du vill ta bort alla klagomål?');">
+        <button type="submit" name="rensa" style="padding: 10px 20px; background-color: darkred; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">
+            Ta bort alla klagomål
+        </button>
+    </form>
+
+    <pre style="margin-top: 20px; background-color: #fff8e1; padding: 20px; border-radius: 10px;">
 <?php
-// 1. Anslut till databasen
-$servername = "localhost";
-$username = "root"; // ändra vid behov
-$password = "";     // ändra vid behov
-$dbname = "hotellkantarell";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Kontrollera anslutning
-if ($conn->connect_error) {
-    die("Anslutning misslyckades: " . $conn->connect_error);
-}
-
-// 2. Ta emot data från formuläret
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $namn = $conn->real_escape_string($_POST['username']);
-    $arende = $conn->real_escape_string($_POST['arende']);
-
-    // 3. Spara i databasen
-    $sql = "INSERT INTO kontakt (namn, arende) VALUES ('$namn', '$arende')";
-    
-    if ($conn->query($sql) === TRUE) {
-    } else {
-        echo "Fel: " . $sql . "<br>" . $conn->error;
-    }
-}
-// Visa alla inskickade meddelanden
-echo "<h2>Inkomna meddelanden:</h2>";
-$result = $conn->query("SELECT * FROM kontakt");
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<div style='border:1px solid #ccc; padding:10px; margin-bottom:10px;'>
-                <p><strong>" . htmlspecialchars($row["namn"]) . "</strong>: " . htmlspecialchars($row["arende"]) . "</p>
-                <a href='adminkontakt.php?id=" . $row["id"] . "' style='color:red;'>Ta bort</a>
-              </div>";
-    }
+$fil = "klagomal.txt";
+if (file_exists($fil) && filesize($fil) > 0) {
+    echo htmlspecialchars(file_get_contents($fil));
 } else {
-    echo "<p>Inga meddelanden ännu.</p>";
+    echo "Inga klagomål har skickats in ännu.";
 }
-
-
-$conn->close();
 ?>
-
-
+    </pre>
+</div>
 
 </body>
 </html>

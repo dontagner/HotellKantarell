@@ -1,17 +1,14 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: 1px dotted red;
 }
 
-body {
-    overflow-x: hidden;
+body{
+    overflow: hidden;
     background-color: antiquewhite;
-    font-family: 'Georgia', serif;
-    color: #3e2f1c;
 }
-
 .topbar {
     display: flex;
     align-items: center;
@@ -36,7 +33,7 @@ body {
 .topbar h1 {
     font-size: 2.5rem;
     color: #7d7232;
-    margin-left: 20px;
+    margin-left: 20px; /* Flyttar texten lite till vänster */
 }
 
 .navbar {
@@ -46,13 +43,12 @@ body {
     width: 40%;
 }
 
-.text {
+.text{
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
-
-a {
+a{
     text-decoration: none;
     color: #7d7232;
     font-size: 1.4rem;
@@ -60,36 +56,14 @@ a {
     padding: 10px;
     background-color: #d9a343;
     font-weight: 800;
-    transition: background-color 0.3s ease;
 }
-
-a:hover {
-    background-color: #eab864;
-}
-
-/* Ny layout för innehållet */
-.omsida-container {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.omsida-content {
-    max-width: 800px;
-    background-color: #fff8e1;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.omsida-content h2 {
+.text2{
     font-size: 2rem;
-    margin-bottom: 20px;
-    color: #7d7232;
-}
+    color: #368b1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-top: 50px;
 
-.omsida-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 15px;
 }
