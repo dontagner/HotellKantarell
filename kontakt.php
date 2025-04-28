@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<?php
-session_start();
-?>
-
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,35 +7,38 @@ session_start();
     <link rel="stylesheet" href="kontakt.css">
 </head>
 <body>
-    <div class="topbar">
-        <div class="imgbox">
-            <img src="Hotell Kantarell.jpg" alt="Hotell Kantarell">
-        </div>
-        <div class="text">
-            <h1>Hotell Kantarell</h1>
-            <div class="navbar">
+
+<header class="topbar">
+    <div class="imgbox">
+        <img src="Hotell Kantarell.jpg" alt="Hotell Kantarell Logo">
+    </div>
+    <div class="text">
+        <h1>Hotell Kantarell</h1>
+        <nav class="navbar">
             <a href="hem.php">Hem</a>
             <a href="om.html">Om</a>
             <a href="boka.php">Boka</a>
             <a href="login.php">Logga in</a>
-        </div>
+        </nav>
     </div>
-    </div>
+</header>
 
+<main>
+    <section class="contact-form">
+        <h2>Kontakta oss</h2>
+        <form action="landerpagekontakt.php" method="post">
+            <div class="form-group">
+                <label for="namn">Ditt namn:</label>
+                <input type="text" id="namn" name="namn" required>
+            </div>
+            <div class="form-group">
+                <label for="klagomal">Ditt klagomål:</label>
+                <textarea id="klagomal" name="klagomal" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Skicka</button>
+        </form>
+    </section>
+</main>
 
-    <div class="contact-form">
-    <h2>Kontakta oss</h2>
-    <form action="landerpagekontakt.php" method="post">
-        <label for="namn">Ditt namn:</label><br>
-        <input type="text" id="namn" name="namn" required><br><br>
-
-        <label for="klagomal">Ditt klagomål:</label><br>
-        <textarea id="klagomal" name="klagomal" rows="5" required></textarea><br><br>
-
-        <button type="submit">Skicka</button>
-    </form>
-</div>
-
-    
 </body>
 </html>

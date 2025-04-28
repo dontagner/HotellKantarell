@@ -7,7 +7,6 @@
 
 body{
     background-color: antiquewhite;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .topbar {
@@ -58,6 +57,7 @@ body{
     background-color: #d9a343;
     font-weight: 800;
 }
+
 
 
 h1 {

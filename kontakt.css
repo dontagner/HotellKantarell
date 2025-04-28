@@ -1,14 +1,14 @@
-*{
+/* Grundinställningar */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --outline: 1px dotted red;
 }
 
-body{
-    overflow: hidden;
+body {
     background-color: antiquewhite;
 }
+
 .topbar {
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@ body{
 .topbar h1 {
     font-size: 2.5rem;
     color: #7d7232;
-    margin-left: 20px; /* Flyttar texten lite till vänster */
+    margin-left: 20px;
 }
 
 .navbar {
@@ -43,12 +43,23 @@ body{
     width: 40%;
 }
 
-.text{
+.text {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
-a{
+.topbar h1 {
+    font-size: 2rem;
+    color: #7d7232;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a{
     text-decoration: none;
     color: #7d7232;
     font-size: 1.4rem;
@@ -57,9 +68,61 @@ a{
     background-color: #d9a343;
     font-weight: 800;
 }
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+
+
+.navbar a:hover {
+    background-color: #b37b25;
+}
+
+/* Kontaktformulär */
+.contact-form {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #fff7e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #7d7232;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d9a343;
+    border-radius: 5px;
+    background-color: #fff;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #d9a343;
+    color: #7d7232;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #b37b25;
 }

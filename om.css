@@ -8,7 +8,6 @@
 body {
     overflow-x: hidden;
     background-color: antiquewhite;
-    font-family: 'Georgia', serif;
     color: #3e2f1c;
 }
 
@@ -50,6 +49,15 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+.navbar a{
+    text-decoration: none;
+    color: #7d7232;
+    font-size: 1.4rem;
+    border-radius: 30%;
+    padding: 10px;
+    background-color: #d9a343;
+    font-weight: 800;
 }
 
 a {
